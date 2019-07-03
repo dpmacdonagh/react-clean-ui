@@ -61,7 +61,7 @@ typings/
 .next
 
 # parcel build directory
-build
+dist
 
 # cache dirs
 .cache

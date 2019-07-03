@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/dpmacdonagh/react-clean-ui.git"
   },
+  "files": [
+    "./dist"
+  ],
   "author": "Dan MacDonagh",
   "license": "ISC",
   "bugs": {
