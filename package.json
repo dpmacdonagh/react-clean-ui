@@ -1,0 +1,35 @@
+{
+  "name": "react-clean-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.js",
+    "watch": "parcel watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpmacdonagh/react-clean-ui.git"
+  },
+  "author": "Dan MacDonagh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpmacdonagh/react-clean-ui/issues"
+  },
+  "homepage": "https://github.com/dpmacdonagh/react-clean-ui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "parcel-bundler": "^1.12.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "sass": "^1.22.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
