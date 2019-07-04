@@ -1,2 +1,9 @@
-@import 'variables/index';
-@import 'components/index';
+@import 'variables/config';
+@import 'variables/colors';
+@import 'variables/inputs';
+@import 'variables/spacing';
+@import 'variables/animation';
+@import 'variables/borders';
+@import 'variables/typography';
+
+@import 'components/Button/Button';
