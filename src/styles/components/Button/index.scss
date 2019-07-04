@@ -25,6 +25,22 @@ $button-types: (
 			outline: 0;
 		}
 
+		&:disabled {
+			cursor: not-allowed;
+		}
+
+		&.is-small {
+			padding: $padding-xs;
+		}
+
+		&.is-large {
+			font-size: $font-size-lg;
+		}
+
+		&.is-block {
+			width: 100%;
+		}
+
 		@each $type, $type-color in $button-types {
 			&.is-#{$type} {
 				background-color: $type-color;
@@ -38,6 +54,12 @@ $button-types: (
 				&:active {
 					background-color: darken($type-color, 10%);
 					border-color: darken($type-color, 10%);
+				}
+
+				&:disabled {
+					background-color: lighten($type-color, 20%);
+					border-color: lighten($type-color, 20%);
+					color: $gray;
 				}
 			}
 		}
