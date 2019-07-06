@@ -49,7 +49,7 @@ $selectColors: (
     transform: rotate(-45deg);
     top: 50%;
     right: 8px;
-    margin-top: -0.425em;
+    margin-top: -0.41em;
   }
 
   &.is-block {
@@ -87,7 +87,9 @@ $selectColors: (
       }
 
       &.is-disabled {
-        border-color: colorVeryLight($color);
+        select {
+          border-color: colorVeryLight($color);
+        }
 
         &::after {
           color: colorVeryLight($color);
