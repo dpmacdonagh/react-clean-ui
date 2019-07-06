@@ -27,7 +27,7 @@ $buttonColors: (
   warning: (
     $warning-color,
     $warning-color,
-    $white
+    darken($warning-color, 40%)
   )
 );
 
@@ -70,12 +70,12 @@ $buttonColors: (
     width: 100%;
   }
 
-  @each $buttonType, $colors in $buttonColors {
+  @each $name, $colors in $buttonColors {
     $backgroundColor: nth($colors, 1);
     $borderColor: nth($colors, 2);
     $fontColor: nth($colors, 3);
 
-    &.is-#{$buttonType} {
+    &.is-#{$name} {
       background-color: $backgroundColor;
       border-color: $borderColor;
       color: $fontColor;
@@ -96,9 +96,9 @@ $buttonColors: (
       }
 
       &:disabled {
-        background-color: colorLight($backgroundColor);
-        border-color: colorLight($borderColor);
-        color: $dark-gray;
+        background-color: colorVeryLight($backgroundColor);
+        border-color: colorVeryLight($borderColor);
+        color: colorVeryLight($default-font-color);
       }
     }
   }
