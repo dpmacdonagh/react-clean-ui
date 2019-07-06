@@ -1,0 +1,27 @@
+$white: #ffffff !default;
+$light-gray: #f5f5f5 !default;
+$gray: #dbdbdb !default;
+$dark-gray: #b5b5b5 !default;
+$very-dark-gray: #4a4a4a !default;
+
+$primary-color: #00d1b2 !default;
+$secondary-color: #209cee !default;
+$success-color: #23d160 !default;
+$danger-color: #ff3860 !default;
+$warning-color: #ffdd57 !default;
+
+@function colorDark($color) {
+  @return darken($color, 5%);
+}
+
+@function colorVeryDark($color) {
+  @return darken($color, 10%);
+}
+
+@function colorLight($color) {
+  @return lighten($color, 10%);
+}
+
+@function colorVeryLight($color) {
+  @return lighten($color, 20%);
+}

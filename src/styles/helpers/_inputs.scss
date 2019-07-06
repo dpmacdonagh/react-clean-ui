@@ -1,5 +1,5 @@
 $input-height: 2.25em;
 
 @function inputFocusedShadow($color) {
-  @return 0 0 0 0.125em rgba($color, 0.25);
+  @return 0 0 0 0.125em rgba($color, 0.35);
 }
