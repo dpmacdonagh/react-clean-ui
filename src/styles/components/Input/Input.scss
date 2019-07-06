@@ -1,0 +1,68 @@
+$inputColors: (
+  default: $dark-gray,
+  primary: $primary-color,
+  secondary: $secondary-color,
+  success: $success-color,
+  danger: $danger-color,
+  warning: $warning-color
+);
+
+.#{$prefix}-input {
+  display: inline-block;
+  font-size: $font-size-base;
+
+  input {
+    background-color: $white;
+    border: 1px solid;
+    border-radius: $default-border-radius;
+    color: $default-font-color;
+    display: block;
+    height: $input-height;
+    line-height: $input-height;
+    font-size: inherit;
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.is-block {
+    display: block;
+  }
+
+  &.is-small {
+    font-size: $font-size-sm;
+  }
+
+  &.is-large {
+    font-size: $font-size-lg;
+  }
+
+  &.is-disabled {
+    input {
+      cursor: not-allowed;
+      color: colorVeryLight($default-font-color);
+    }
+  }
+
+  @each $name, $color in $inputColors {
+    &.is-#{$name} {
+      input {
+        border-color: $color;
+
+        &:focus:not([disabled]),
+        &:active:not([disabled]) {
+          box-shadow: inputFocusedShadow($color);
+        }
+      }
+
+      &.is-disabled {
+        input {
+          border-color: colorVeryLight($color);
+        }
+      }
+    }
+  }
+}
