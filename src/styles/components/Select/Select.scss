@@ -1,3 +1,12 @@
+$selectColors: (
+  default: $dark-gray,
+  primary: $primary-color,
+  secondary: $secondary-color,
+  success: $success-color,
+  danger: $danger-color,
+  warning: $warning-color
+);
+
 .#{$prefix}-select {
   display: inline-block;
   position: relative;
@@ -8,6 +17,7 @@
     border: 1px solid;
     border-radius: $default-border-radius;
     color: $default-font-color;
+    cursor: pointer;
     display: block;
     height: $input-height;
     font-size: inherit;
@@ -54,19 +64,34 @@
     font-size: $font-size-lg;
   }
 
-  @each $type, $type-color in $color-map {
-    &.is-#{$type} {
+  &.is-disabled {
+    select {
+      cursor: not-allowed;
+      color: colorVeryLight($default-font-color);
+    }
+  }
+
+  @each $name, $color in $selectColors {
+    &.is-#{$name} {
       select {
-        border-color: $type-color;
+        border-color: $color;
 
         &:focus,
         &:active {
-          box-shadow: inputFocusedShadow($type-color);
+          box-shadow: inputFocusedShadow($color);
         }
       }
 
       &::after {
-        color: $type-color;
+        color: $color;
+      }
+
+      &.is-disabled {
+        border-color: colorVeryLight($color);
+
+        &::after {
+          color: colorVeryLight($color);
+        }
       }
     }
   }

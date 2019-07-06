@@ -7,6 +7,7 @@ const Select = (props) => {
     'rcu-select',
     {
       'is-block': props.block,
+      'is-disabled': props.disabled,
       [`is-${props.color}`]: props.color,
       [`is-${props.size}`]: props.size
     }
@@ -17,6 +18,7 @@ const Select = (props) => {
   }
 
   const selectProps = {
+    disabled: props.disabled,
     onChange: props.onChange
   }
 
@@ -37,10 +39,13 @@ Select.propTypes = {
   children: PropTypes.node,
   color: PropTypes.oneOf([
     'default',
-    'danger',
+    'primary',
+    'secondary',
     'success',
+    'danger',
     'warning'
   ]),
+  disabled: PropTypes.bool,
   onChange: PropTypes.func,
   size: PropTypes.oneOf([
     'small',
