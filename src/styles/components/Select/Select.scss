@@ -76,8 +76,8 @@ $selectColors: (
       select {
         border-color: $color;
 
-        &:focus,
-        &:active {
+        &:focus:not([disabled]),
+        &:active:not([disabled]) {
           box-shadow: inputFocusedShadow($color);
         }
       }
