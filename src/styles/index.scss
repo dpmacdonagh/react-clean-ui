@@ -1,10 +1,10 @@
-@import 'variables/config';
-@import 'variables/colors';
-@import 'variables/inputs';
-@import 'variables/spacing';
-@import 'variables/animation';
-@import 'variables/borders';
-@import 'variables/typography';
+@import 'helpers/config';
+@import 'helpers/base-colors';
+@import 'helpers/inputs';
+@import 'helpers/spacing';
+@import 'helpers/animation';
+@import 'helpers/borders';
+@import 'helpers/typography';
 
 @import 'components/Button/Button';
 @import 'components/Select/Select';
