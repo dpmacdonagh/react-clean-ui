@@ -1,3 +1,36 @@
+$buttonColors: (
+  default: (
+    $white,
+    $dark-gray,
+    $default-font-color
+  ),
+  primary: (
+    $primary-color,
+    $primary-color,
+    $white
+  ),
+  secondary: (
+    $secondary-color,
+    $secondary-color,
+    $white
+  ),
+  success: (
+    $success-color,
+    $success-color,
+    $white
+  ),
+  danger: (
+    $danger-color,
+    $danger-color,
+    $white
+  ),
+  warning: (
+    $warning-color,
+    $warning-color,
+    $white
+  )
+);
+
 .#{$prefix}-button {
   border: 1px solid;
   border-radius: $default-border-radius;
@@ -37,31 +70,55 @@
     width: 100%;
   }
 
-  @each $type, $type-color in $color-map {
-    &.is-#{$type} {
-      background-color: $type-color;
-      border-color: $type-color;
+  @each $buttonType, $colors in $buttonColors {
+    $backgroundColor: nth($colors, 1);
+    $borderColor: nth($colors, 2);
+    $fontColor: nth($colors, 3);
+
+    &.is-#{$buttonType} {
+      background-color: $backgroundColor;
+      border-color: $borderColor;
+      color: $fontColor;
 
       &:focus,
       &:active {
-        box-shadow: inputFocusedShadow($type-color);
+        box-shadow: inputFocusedShadow($borderColor);
       }
 
-      &:hover {
-        background-color: darken($type-color, 5%);
-        border-color: darken($type-color, 5%);
+      &:hover:not([disabled]) {
+        background-color: colorDark($backgroundColor);
+        border-color: colorDark($borderColor);
       }
 
       &:active {
-        background-color: darken($type-color, 10%);
-        border-color: darken($type-color, 10%);
+        background-color: colorVeryDark($backgroundColor);
+        border-color: colorVeryDark($borderColor);
       }
 
       &:disabled {
-        background-color: lighten($type-color, 20%);
-        border-color: lighten($type-color, 20%);
-        color: $gray;
+        background-color: colorLight($backgroundColor);
+        border-color: colorLight($borderColor);
+        color: $dark-gray;
       }
+    }
+  }
+
+  &.is-link {
+    background-color: $white;
+    border-color: $white;
+    color: $primary-color;
+
+    &:focus,
+    &:active {
+      color: colorVeryDark($primary-color);
+    }
+
+    &:hover:not([disabled]) {
+      color: colorDark($primary-color);
+    }
+
+    &:disabled {
+      color: colorVeryLight($primary-color);
     }
   }
 }

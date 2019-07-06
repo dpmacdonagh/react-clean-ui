@@ -41,9 +41,12 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   color: PropTypes.oneOf([
     'default',
-    'danger',
+    'primary',
+    'secondary',
     'success',
-    'warning'
+    'danger',
+    'warning',
+    'link'
   ]),
   onClick: PropTypes.func,
   size: PropTypes.oneOf([
